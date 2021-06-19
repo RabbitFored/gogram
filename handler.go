@@ -33,7 +33,7 @@ type HandlerOptions struct {
 func (telepher *Bot) On(Type string, handler interface{},handlerOptions *HandlerOptions){
   
   if handlerOptions != nil{
-telepher.Handlers[handlerOptions.groupID] = append(telepher.Handlers[handlerOptions.groupID], Handler{Type:Type,function: handler,HandlerOptions:handlerOptions})
+telepher.Handlers[handlerOptions.GroupID] = append(telepher.Handlers[handlerOptions.GroupID], Handler{Type:Type,function: handler,HandlerOptions:handlerOptions})
 
 
 }else{
@@ -88,7 +88,7 @@ func (telepher Bot) CommandHandler(trigger string, msg *types.Message){
 func (telepher Bot) Hears(trigger string, handler interface{},handlerOptions *HandlerOptions){
   rx := regexp.MustCompile(trigger)
   if handlerOptions != nil{
-telepher.Handlers[handlerOptions.groupID] = append(telepher.Handlers[handlerOptions.groupID], Handler{Trigger:rx,function: handler,HandlerOptions:handlerOptions})
+telepher.Handlers[handlerOptions.GroupID] = append(telepher.Handlers[handlerOptions.GroupID], Handler{Trigger:rx,function: handler,HandlerOptions:handlerOptions})
 
 
 }else{
