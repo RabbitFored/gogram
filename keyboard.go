@@ -1,7 +1,7 @@
 package telepher
 
 import (
-"main/types"
+"github.com/goTelegramBot/telepher/types"
 )
 func InlineKeyboardMarkup() (*InlineKeyboard){
 InlineKeyboard := &InlineKeyboard{}
