@@ -25,7 +25,7 @@ type messageHandler struct {
 }
 
 type HandlerOptions struct {
-  groupID int
+  GroupID int
   filters func(message *types.Message) bool
 }
 
