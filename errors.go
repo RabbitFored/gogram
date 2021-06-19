@@ -5,4 +5,8 @@ import (
   )
   
 
-var inValidTokenErr = errors.New(" Error : Invalid Token Provided")
+var (
+  
+  invalidTokenErr = errors.New("invalid token provided")
+  invalidOptions  = errors.New("unsupported options argument")
+)
