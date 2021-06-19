@@ -1,6 +1,6 @@
 package telepher
 import (
-  "telepher/types"
+  "github.com/goTelegramBot/telepher/types"
   "net/http"
 
   )
