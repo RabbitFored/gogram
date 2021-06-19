@@ -9,7 +9,7 @@ import (
   "bytes"
   "fmt"
   "os"
-  "main/types"
+  "github.com/goTelegramBot/telepher/types"
   "encoding/json"
 
   

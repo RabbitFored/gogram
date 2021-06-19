@@ -3,7 +3,7 @@ package telepher
 import (
 	_ "fmt"
 	"log"
-	"main/types"
+	"github.com/goTelegramBot/telepher/types"
 	"sort"
 	"strings"
 )
