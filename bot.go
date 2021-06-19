@@ -1,16 +1,18 @@
 package telepher
-
 import (
+  "telepher/types"
   "net/http"
-  "strings"
-  "unicode"
-)
 
-func Bot(token string,settings *Settings) (*Telepher,error) {
-    telepher := &Telepher{
-    Token: token,
-    Update: make(chan Update),
+  )
   
+  
+func NewBot(token string,settings *Settings) (*Gobot,error) {
+
+  telepher := &Bot{
+    Token: token,
+    Update: make(chan types.Update),
+    Handlers: make(map[int][]Handler),
+    Commands: make(map[string][]Commands),
   }
   
   if settings != nil{
@@ -25,42 +27,27 @@ func Bot(token string,settings *Settings) (*Telepher,error) {
     }
      if settings.ParseMode == ""{
       settings.ParseMode = DefaultParseMode
-     if settings.DisableTokenCheck == false{
-       
-       isValidToken := CheckToken(token)
-      if isValidToken == false{
-        return nil,inValidTokenErr
-      }
      }
     
-    }
+    
     telepher.BaseURL = settings.BaseURL
     telepher.BaseFileURL = settings.BaseFileURL
     telepher.Client = settings.Client
-    telepher.ParseMode = settings.ParseMode
-    telepher.DisableTokenCheck = settings.DisableTokenCheck
+    telepher.ParseMode = settings.ParseMode   
 
-
-    
-
-  } else {
+  }else{
 
   telepher.BaseURL = DefaultBaseURL
   telepher.BaseFileURL =  DefaultBaseFileURL
   telepher.Client =  DefaultClient
   telepher.ParseMode = DefaultParseMode
-  if telepher.DisableTokenCheck == false{
-    isValidToken := CheckToken(token)
-      if isValidToken == false{
-        return nil,inValidTokenErr
-      }
-  }
   }
   
   me, err := telepher.GetMe()
 	if err != nil {
 		return nil, err
 	}
+
   telepher.Self = me
   return telepher , nil
   
@@ -68,26 +55,26 @@ func Bot(token string,settings *Settings) (*Telepher,error) {
  
 
 
-type Telepher struct{
-  Token 		string
-  BaseURL 		string
-  BaseFileURL 	string
-  Client      	*http.Client
-  ParseMode 	string
-  Update 		chan Update
-  DisableTokenCheck   bool
-  Self          *User
+type Bot struct{
+  Token string
+  BaseURL string
+  BaseFileURL string
+  Handlers map[int][]Handler
+  Commands map[string][]Commands
+  Client      *http.Client
+  ParseMode string
+  Update chan types.Update
+  Self          *types.User
 }
 
 type Settings struct{
-  BaseURL 		string
-  BaseFileURL 	string
-  Client 		*http.Client
-  ParseMode 	string
-  DisableTokenCheck	  bool
+  BaseURL string
+  BaseFileURL string
+  Client *http.Client
+  ParseMode string
 }
 
-
+/*
 func CheckToken(token string)(bool){
 	if len(token) > 40 {  
 		for _, char := range token {
@@ -115,3 +102,4 @@ func CheckToken(token string)(bool){
     	return false
   			}
 }
+*/
