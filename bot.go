@@ -6,7 +6,7 @@ import (
   )
   
   
-func NewBot(token string,settings *Settings) (*Gobot,error) {
+func NewBot(token string,settings *Settings) (*Bot,error) {
 
   telepher := &Bot{
     Token: token,
