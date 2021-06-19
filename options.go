@@ -3,7 +3,7 @@ package telepher
 import (
 	"encoding/json"
 	"fmt"
-	"main/types"
+	"github.com/goTelegramBot/telepher/types"
 	"net/url"
 	"reflect"
 	"strconv"
