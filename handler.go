@@ -107,7 +107,7 @@ for i := range telepher.Handlers {
 
  for _,groupID := range  groupIDs {
    	for _, handler := range telepher.Handlers[groupID]{
-           
+    if handler.Trigger != nil{
     if handler.Trigger.MatchString(msg.Text) {
             if handler.HandlerOptions.filters != nil{
        if handler.HandlerOptions.filters(msg){
@@ -117,7 +117,7 @@ for i := range telepher.Handlers {
               handler.function.(func (Bot, *types.Message))(telepher,msg)
            }
              
-  }
+  }}
      }}
 
  }
