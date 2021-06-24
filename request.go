@@ -104,7 +104,6 @@ return nil,err
   resp, err := telepher.Client.Do(req)
   data, err := ioutil.ReadAll(resp.Body)
   
-  fmt.Println(string(data))
 
 
 
