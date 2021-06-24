@@ -1016,8 +1016,7 @@ func (telepher Bot) AnswerCallbackQuery(callback_query_id string) (bool, error) 
 	values := url.Values{}
 
 	values.Add("callback_query_id", callback_query_id)
-	values.Add("text", "1")
-	values.Add("cache_time", "100")
+	
 
 	response, err := telepher.post("answerCallbackQuery", values)
 

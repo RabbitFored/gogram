@@ -216,7 +216,7 @@ func (telepher Bot) Start() {
 				for _, handler := range telepher.Handlers[groupID] {
 
 					if handler.Type == "CallbackQuery" {
-						handler.function.(func(Bot, *types.CallbackQuery))(telepher, update.CallbackQuery)
+						handler.function.(func (Bot, *types.CallbackQuery))(telepher, update.CallbackQuery)
 
 					}
 				}
