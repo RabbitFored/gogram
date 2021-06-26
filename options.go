@@ -62,7 +62,8 @@ func (telepher Bot) extractOptions(values url.Values, option *Options) error {
 			return fmt.Errorf("unsupported parse_mode %s", option.ParseMode)
 		}
 
-		values.Add("disable_web_page_preview", strconv.FormatBool(option.DisableNotification))
+		values.Add("disable_web_page_preview", strconv.FormatBool(option.DisableWebPagePreview))
+		values.Add("disable_notification", strconv.FormatBool(option.DisableNotification))
 
 		if option.ReplyToMessageID != 0 {
 			values.Add("reply_to_message_id", strconv.Itoa(option.ReplyToMessageID))
