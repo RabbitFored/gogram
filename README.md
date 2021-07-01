@@ -15,31 +15,31 @@
     package main
 
     import (
-     tl "github.com/goTelegramBot/telepher"
-     "github.com/goTelegramBot/telepher/types"
+        tl "github.com/goTelegramBot/telepher"
+           "github.com/goTelegramBot/telepher/types"
      )
   
 
     func main() {
     
-    b,err := tl.NewBot(os.Getenv("TOKEN"),nil)
+           b,err := tl.NewBot(os.Getenv("TOKEN"),nil)
     
-    if err != nil{
-        log.Println(err)
-        return
-    }
+           if err != nil{
+                log.Println(err)
+                return
+           }
 
-    b.Command("start",start)
-    b.Start()
+           b.Command("start",start)
+           b.Start()
     }
     func start(bot tl.Bot,message *types.Message) {
-     text := "Hi there!"
+            text := "Hi there!"
     
-    markup := tl.InlineKeyboardMarkup()
-    but1 := types.InlineKeyboardButton{Text:"Channel",Url: "https://t.me/theostrich"}
-    row1 := markup.Row(but1)
+            markup := tl.InlineKeyboardMarkup()
+            but1 := types.InlineKeyboardButton{Text:"Channel",Url: "https://t.me/theostrich"}
+            row1 := markup.Row(but1)
 
-     keyboard := markup.Parse(row1)
+            keyboard := markup.Parse(row1)
      
-     bot.SendMessage(message.Chat.Id, text,&tl.Options{ReplyMarkup:&keyboard,ParseMode:"Markdown"})
+            bot.SendMessage(message.Chat.Id, text,&tl.Options{ReplyMarkup:&keyboard,ParseMode:"Markdown"})
      }
