@@ -31,4 +31,15 @@
 
     b.Command("start",start)
     b.Start()
-}
+    }
+    func start(bot tl.Bot,message *types.Message) {
+     text := "Hi there!"
+    
+    markup := tl.InlineKeyboardMarkup()
+    but1 := types.InlineKeyboardButton{Text:"Channel",Url: "https://t.me/theostrich"}
+    row1 := markup.Row(but1)
+
+     keyboard := markup.Parse(row1)
+     
+     bot.SendMessage(message.Chat.Id, text,&tl.Options{ReplyMarkup:&keyboard,ParseMode:"Markdown"})
+     }
