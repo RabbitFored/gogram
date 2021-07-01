@@ -5,7 +5,7 @@
 
 ### Features
 
-- Full [Telegram Bot API 5.2](https://core.telegram.org/bots/api) support ( NOT UPDATED TO BOT API V3 
+- Full [Telegram Bot API 5.2](https://core.telegram.org/bots/api) support ( NOT UPDATED TO BOT API 5.3 )
 - Lightweight
 - Easy to write
 - [Support](https://t.me/ostrichdiscussion)
