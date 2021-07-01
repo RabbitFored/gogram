@@ -12,15 +12,18 @@
 
 
 ### Usage
-package main
+    package main
 
-import (
-  tl "github.com/goTelegramBot/telepher"
-  "github.com/goTelegramBot/telepher/types"
-  )
+    import (
+     tl "github.com/goTelegramBot/telepher"
+     "github.com/goTelegramBot/telepher/types"
+     )
   
-func main() {
+
+    func main() {
+    
     b,err := tl.NewBot(os.Getenv("TOKEN"),nil)
+    
     if err != nil{
         log.Println(err)
         return
