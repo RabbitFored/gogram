@@ -37,8 +37,9 @@
     
             markup := tl.InlineKeyboardMarkup()
             but1 := types.InlineKeyboardButton{Text:"Channel",Url: "https://t.me/theostrich"}
-            row1 := markup.Row(but1)
-
+            but2 := types.InlineKeyboardButton{Text:"Support",Url: "https://t.me/ostrichdiscussion"}
+            
+            row1 := markup.Row(but1,but2)
             keyboard := markup.Parse(row1)
      
             bot.SendMessage(message.Chat.Id, text,&tl.Options{ReplyMarkup:&keyboard,ParseMode:"Markdown"})
