@@ -12,6 +12,7 @@
 
 
 ### Usage
+```go
     package main
 
     import (
@@ -36,6 +37,7 @@
             text := "Hi there!"
     
             markup := tl.InlineKeyboardMarkup()
+            
             but1 := types.InlineKeyboardButton{Text:"Channel",Url: "https://t.me/theostrich"}
             but2 := types.InlineKeyboardButton{Text:"Support",Url: "https://t.me/ostrichdiscussion"}
             
@@ -44,3 +46,5 @@
      
             bot.SendMessage(message.Chat.Id, text,&tl.Options{ReplyMarkup:&keyboard,ParseMode:"Markdown"})
      }
+     
+  ```
