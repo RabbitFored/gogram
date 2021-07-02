@@ -12,15 +12,16 @@
 
 
 ### Usage
-    package main
+```go
+package main
 
-    import (
-        tl "github.com/goTelegramBot/telepher"
-           "github.com/goTelegramBot/telepher/types"
-     )
+import (
+    tl "github.com/goTelegramBot/telepher"
+        "github.com/goTelegramBot/telepher/types"
+)
   
 
-    func main() {
+func main() {
     
            b,err := tl.NewBot(os.Getenv("TOKEN"),nil)
     
@@ -31,11 +32,12 @@
 
            b.Command("start",start)
            b.Start()
-    }
-    func start(bot tl.Bot,message *types.Message) {
+}
+func start(bot tl.Bot,message *types.Message) {
             text := "Hi there!"
     
             markup := tl.InlineKeyboardMarkup()
+            
             but1 := types.InlineKeyboardButton{Text:"Channel",Url: "https://t.me/theostrich"}
             but2 := types.InlineKeyboardButton{Text:"Support",Url: "https://t.me/ostrichdiscussion"}
             
@@ -43,4 +45,8 @@
             keyboard := markup.Parse(row1)
      
             bot.SendMessage(message.Chat.Id, text,&tl.Options{ReplyMarkup:&keyboard,ParseMode:"Markdown"})
-     }
+}
+     
+  ```
+  
+For additional bot examples check [`examples`](https://github.com/goTelegramBot/telepher-examples) repository.
