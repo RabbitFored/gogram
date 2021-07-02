@@ -17,7 +17,7 @@ package main
 
 import (
     tl "github.com/goTelegramBot/telepher"
-        "github.com/goTelegramBot/telepher/types"
+       "github.com/goTelegramBot/telepher/types"
 )
   
 
