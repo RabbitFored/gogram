@@ -16,8 +16,8 @@
 package main
 
 import (
-    tl "github.com/goTelegramBot/telepher"
-        "github.com/goTelegramBot/telepher/types"
+    tl "github.com/goTelegramBot/gogram"
+        "github.com/goTelegramBot/gogram/types"
 )
   
 
@@ -49,4 +49,4 @@ func start(bot tl.Bot,message *types.Message) {
      
   ```
   
-For additional bot examples check [`examples`](https://github.com/goTelegramBot/telepher-examples) repository.
+For additional bot examples check [`examples`](https://github.com/goTelegramBot/gogram-examples) repository.
