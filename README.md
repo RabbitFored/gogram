@@ -50,3 +50,17 @@ func start(bot tl.Bot,message *types.Message) {
   ```
   
 For additional bot examples check [`examples`](https://github.com/goTelegramBot/telepher-examples) repository.
+
+```
+          ,_---~~~~~----._
+   _,,_,*^____      _____``*g*\"*,
+  / __/ /'     ^.  /      \ ^@q   f
+ [  @f | @))    |  | @))   l  0 _/
+  \`/   \~____ / __ \_____/    \
+   |           _l__l_           I
+   }          [______]           I
+   ]            | | |            |
+   ]             ~ ~             |
+   |                            |
+    |                           |
+    ```
